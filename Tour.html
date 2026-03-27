@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tour Interactivo - La Cueva</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("https://i.pinimg.com/1200x/9a/a7/e4/9aa7e4334577be3cb1a55b2a3389c866.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color:white;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index:-1;
+}
+
+header{
+    text-align:center;
+    padding:20px;
+    font-size:28px;
+    font-weight:bold;
+    background: rgba(0,0,0,0.4);
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    background:rgba(0,0,0,0.4);
+    padding:10px;
+}
+nav button{
+    padding:10px 15px;
+    border:none;
+    background:#00c6ff;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#0072ff;
+    transform:scale(1.1);
+}
+
+.section{
+    display:none;
+    padding:20px;
+    animation:fade 0.6s;
+}
+
+.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.card{
+    background:rgba(255,255,255,0.1);
+    padding:15px;
+    border-radius:15px;
+    margin:10px 0;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+img{
+    width:100%;
+    border-radius:10px;
+}
+
+video{
+    width:100%;
+    border-radius:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.collage{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.card:hover{
+    transform:rotateY(10deg) scale(1.05);
+    transition:0.4s;
+}
+
+.quiz-btn{
+    background:#ff9800;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+.link-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px;
+    background:#4CAF50;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+🌍 TOUR INTERACTIVO: LA CUEVA, AGUASCALIENTES
+</header>
+
+<nav>
+<button onclick="mostrar('inicio')">Inicio</button>
+<button onclick="mostrar('localizacion')">Localización</button>
+<button onclick="mostrar('distribucion')">Distribución</button>
+<button onclick="mostrar('naturaleza')">Naturaleza</button>
+<button onclick="mostrar('vida')">Vida</button>
+<button onclick="mostrar('problemas')">Problemas</button>
+<button onclick="mostrar('mapa')">Google Maps</button>
+</nav>
+
+<div id="inicio" class="section active">
+    <div class="card">
+        <h2>🚀 Bienvenido Explorador</h2>
+        <p>Hoy recorrerás la comunidad de <b>La Cueva</b> de forma interactiva.</p>
+        <p>Conocerás su ubicación, su entorno natural, cómo viven las personas y los principales retos que enfrenta.</p>
+    </div>
+
+    <div class="card">
+        <h3>🎥 Video</h3>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<div id="localizacion" class="section">
+    <div class="card">
+        <h2>📍 Localización</h2>
+        <p>La comunidad de <b>La Cueva</b> se encuentra en el Ejido Morelos, en el municipio de Rincón de Romos, Aguascalientes.</p>
+        <p>Es una zona rural caracterizada por su cercanía a terrenos agrícolas, caminos de acceso sencillos y poca densidad poblacional.</p>
+        <p>Se conecta con otras comunidades a través de carreteras y caminos rurales.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🗺️ Imagen</h3>
+            <img src="im1.png">
+        </div>
+
+        <div class="card">
+            <h3>❓ Pregunta</h3>
+            <p>¿Está cerca de montañas o es zona plana?</p>
+            <button class="quiz-btn" onclick="alert('Es mayormente zona semi plana')">Responder</button>
+        </div>
+
+        <div class="card">
+            <h3>❓ Pregunta</h3>
+            <p>¿Qué tipo de clima predomina?</p>
+            <button class="quiz-btn" onclick="alert('Clima seco y caluroso')">Responder</button>
+        </div>
+
+        <div class="card">
+            <h3>❓ Pregunta</h3>
+            <p>¿La zona es urbana o rural?</p>
+            <button class="quiz-btn" onclick="alert('Es una zona rural')">Responder</button>
+        </div>
+
+        <div class="card">
+            <h3>❓ Pregunta</h3>
+            <p>¿A qué se dedica principalmente la población?</p>
+            <button class="quiz-btn" onclick="alert('A la agricultura y ganadería')">Responder</button>
+        </div>
+    </div>
+</div>
+
+<div id="mapa" class="section">
+    <div class="card">
+        <h2>📍 Ubicación en Google Maps</h2>
+        <iframe src="https://www.google.com/maps?q=Ejido%20Morelos%20La%20Cueva%20Rincon%20de%20Romos%20Aguascalientes&output=embed"></iframe>
+        <a class="link-btn" href="https://www.google.com/maps/search/?api=1&query=Ejido+Morelos+La+Cueva+Rincon+de+Romos+Aguascalientes" target="_blank">🚗 Cómo llegar</a>
+    </div>
+</div>
+
+<div id="distribucion" class="section">
+    <div class="card">
+        <h2>🗺️ Distribución</h2>
+        <p>La distribución de la comunidad depende del terreno, la actividad agrícola y la organización de sus habitantes.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🏘️ Calles</h3>
+            <div class="collage">
+                <img src="im6.jpeg">
+                <img src="im7.jpeg">
+                <img src="im8.jpeg">
+                <img src="im9.jpeg">
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>💡 Análisis</h3>
+            <p>Las calles pueden ser de tierra o pavimento básico.</p>
+            <p>En zonas rurales, la distribución no siempre es uniforme.</p>
+            <p>Las viviendas pueden estar separadas por terrenos agrícolas.</p>
+            <p>El crecimiento de la comunidad suele ser progresivo y no planificado completamente.</p>
+        </div>
+    </div>
+</div>
+
+<div id="naturaleza" class="section">
+    <div class="card">
+        <h2>🌿 Diversidad Natural</h2>
+        <p>El entorno natural de La Cueva es característico de zonas semiáridas.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🌳 Vegetación</h3>
+            <div class="collage">
+                <img src="im2.jpeg">
+                <img src="im3.jpeg">
+                <img src="im4.jpeg">
+                <img src="im5.jpeg">
+            </div>
+            <p>Predominan pastizales, nopales y vegetación resistente a la sequía.</p>
+        </div>
+
+        <div class="card">
+            <h3>☀️ Clima</h3>
+            <p>El clima es seco, con temperaturas altas durante el día.</p>
+            <p>Las lluvias son escasas y se concentran en ciertos meses del año.</p>
+        </div>
+
+        <div class="card">
+            <h3>🐄 Fauna</h3>
+            <p>Se encuentran animales de campo como vacas, gallinas y caballos.</p>
+            <p>También hay aves y pequeños animales adaptados al clima.</p>
+        </div>
+    </div>
+</div>
+
+<div id="vida" class="section">
+    <div class="card">
+        <h2>🏙️ Vida Cotidiana</h2>
+        <p>La vida en la comunidad es tranquila y se centra en actividades diarias como el trabajo, la escuela y la convivencia.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🏫 Escuela</h3>
+            <img src="escuela.jpeg">
+            <p>La escuela es un lugar fundamental para la educación y convivencia de los niños.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏪 Tiendas</h3>
+            <img src="tienda.jpeg">
+            <p>Las tiendas locales permiten el abastecimiento de productos básicos.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏛️ Plaza central</h3>
+            <img src="plaza.jpeg">
+            <p>Es el punto de reunión para eventos, celebraciones y actividades sociales.</p>
+        </div>
+    </div>
+</div>
+
+<div id="problemas" class="section">
+    <div class="card">
+        <h2>⚠️ Problemas del entorno</h2>
+        <p>Como muchas comunidades rurales, La Cueva enfrenta diversos retos.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🗑️ Basura</h3>
+            <img src="basura.jpeg" style="width:150px;">
+            <p>La falta de recolección adecuada puede generar contaminación.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚧 Calles</h3>
+            <p>Algunas calles presentan desgaste o falta de pavimentación.</p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Agua</h3>
+            <p>En temporadas secas puede haber escasez de agua potable.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function mostrar(seccion){
+    let secciones = document.querySelectorAll('.section');
+    secciones.forEach(s => s.classList.remove('active'));
+    document.getElementById(seccion).classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
