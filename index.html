@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Tour Interactivo - La Cueva</title>
+<title> - La Cueva - </title>
 
 <style>
 body{
@@ -140,6 +140,8 @@ video{
 <button onclick="mostrar('vida')">Vida</button>
 <button onclick="mostrar('problemas')">Problemas</button>
 <button onclick="mostrar('mapa')">Google Maps</button>
+<button onclick="mostrar('satelital')">Satelital</button>
+<button onclick="mostrar('geografia')">Geografía</button>
 </nav>
 
 <div id="inicio" class="section active">
@@ -152,7 +154,7 @@ video{
     <div class="card">
         <h3>🎥 Video</h3>
         <video controls>
-            <source src="video.mp4" type="video/mp4">
+            <source src="lacueva.mov" type="video/mp4">
         </video>
     </div>
 </div>
@@ -315,7 +317,60 @@ video{
         </div>
     </div>
 </div>
+<div id="satelital" class="section">
+    <div class="card">
+        <h2>🛰️ Vista Satelital</h2>
+        <p>En este apartado podrás observar imágenes satelitales de la comunidad de La Cueva, así como un video representativo.</p>
+    </div>
 
+    <div class="grid">
+        <div class="card">
+            <h3>📷 Imagen 1</h3>
+            <img src="st1.jpeg">
+        </div>
+
+     
+        <div class="card">
+            <h3>📷 Imagen 3</h3>
+            <img src="st2.jpeg">
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>🎥 Video Satelital</h3>
+        <video controls style="width:70%; display:block; margin:auto;">
+            <source src="sat.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div id="geografia" class="section">
+    <div class="card">
+        <h2>🌎 Geografía</h2>
+
+        <p>La comunidad de <b>La Cueva</b>, ubicada en el Ejido Morelos, pertenece al municipio de Rincón de Romos, en el estado de Aguascalientes, dentro de la región centro-norte de México.</p>
+
+        <p>Se localiza aproximadamente a una <b>altitud de entre 1,900 y 2,000 metros sobre el nivel del mar</b>, lo que influye directamente en sus condiciones climáticas y en las actividades económicas de la población.</p>
+
+        <p><b>Relieve:</b> Predomina un relieve semi plano con ligeras ondulaciones, lo que permite el desarrollo de actividades agrícolas y facilita el asentamiento humano.</p>
+
+        <p><b>Clima:</b> Presenta un clima semiárido, con temperaturas elevadas durante el día, noches frescas y una precipitación anual baja, concentrada principalmente en verano.</p>
+
+        <p><b>Hidrografía:</b> No existen cuerpos de agua permanentes en la zona, por lo que el abastecimiento depende de pozos, almacenamiento de agua de lluvia y sistemas locales.</p>
+
+        <p><b>Suelos (Edafología):</b> Los suelos son de tipo seco, con fertilidad media, aptos para la agricultura de temporal, aunque dependen de las condiciones de lluvia.</p>
+
+        <p><b>Vegetación:</b> Predominan especies adaptadas a climas secos como nopales, mezquites, huizaches y pastizales.</p>
+
+        <p><b>Fauna:</b> Se encuentran animales de campo como bovinos, aves de corral, así como pequeñas especies silvestres adaptadas al entorno semiárido.</p>
+
+        <p><b>Uso del suelo:</b> Principalmente agrícola y ganadero, con parcelas destinadas al cultivo y áreas para el pastoreo.</p>
+
+        <p><b>Conectividad:</b> La comunidad se conecta mediante caminos rurales y carreteras secundarias, facilitando la comunicación con otras localidades cercanas.</p>
+
+    </div>
+</div>
+
+💥 Con esto ya tienes:
 <script>
 function mostrar(seccion){
     let secciones = document.querySelectorAll('.section');
